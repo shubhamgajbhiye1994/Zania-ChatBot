@@ -71,3 +71,8 @@ output : output.json
 
 Note : If you want to change input file then place pdf file in /data/input/ and then run main.py script with addition argument of -io True
 
+## Demo
+
+https://github.com/shubhamgajbhiye1994/Zania-ChatBot/assets/32373229/70d3ee18-7c7b-4acc-b681-813bdf2caff0
+
+
