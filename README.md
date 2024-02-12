@@ -36,7 +36,7 @@ a) for Linux Machine installation
     1.clone github repo:
         git clone <github_link>
     2.cd Zania-Chatbot and run sh setup.sh
-    3.if logs and models folders are not present then create folder structure
+    3.if logs and models folders are not present then create folder structure for logs and models
        
 
 b) for Windows Machine
