@@ -36,6 +36,7 @@ a) for Linux Machine installation
     1.clone github repo:
         git clone <github_link>
     2.cd Zania-Chatbot and run sh setup.sh
+    3.if logs and models folders are not present then create folder structure
        
 
 b) for Windows Machine
@@ -49,9 +50,12 @@ b) for Windows Machine
 
         virtual_env -m pip install -r requirements.txt
         git lfs install
+        # create models and logs directory if not already created
         cd /root/Zania-ChatBot/models
         git clone https://huggingface.co/BAAI/bge-reranker-base
         git clone https://huggingface.co/BAAI/bge-small-en-v1.5
+
+    
 
 This will set project env.
 ## Sample Input Output

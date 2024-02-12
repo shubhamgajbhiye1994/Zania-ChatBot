@@ -31,7 +31,7 @@ embed_model = OpenAIEmbedding()
 
  
 # Create and configure logger
-logging.basicConfig(filename=os.join(LOGS_DIR,"QA_BOT.log"))
+logging.basicConfig(filename=os.path.join(LOGS_DIR,"QA_BOT.log"))
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 

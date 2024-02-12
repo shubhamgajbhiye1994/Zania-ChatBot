@@ -3,6 +3,7 @@ Data Processing:
     It creates embedding and nodes and store it at local directory
 """
 import os
+import json
 from config.config import configure_service, storage_config,node_parser
 from src.utils.argument_parser import args
 from llama_index.storage.docstore import SimpleDocumentStore
@@ -34,9 +35,16 @@ def build_automerge_index():
         automerge_index = VectorStoreIndex(leaf_nodes,storage_context=storage_context)
         automerge_index.storage_context.persist(persist_dir = const.INDEX_DIR)
     else:
+        ## get lates index id if multiple indexes found
+        with open(os.path.join(const.INDEX_DIR,"index_store.json"),'r') as f:
+            file = json.load(f)
+        for i,j in file.items():
+            for k,_ in j.items():
+                index_id = k
+            
         automerge_index = load_index_from_storage(storage_context = storage_config(),\
                                                 service_context = configure_service(),\
-                                                index_id = "cffc19f2-b7e1-4336-b390-4f1956786939")
+                                                index_id = index_id)
     const.logger.info("build_automerge_index ends...")   
     return automerge_index
 
